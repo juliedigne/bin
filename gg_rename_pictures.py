@@ -31,12 +31,9 @@ def get_date_name(image):
                 datename = "%s_%02d.%s" %(date, counter, ext)
 
         newname = "%s_%02d.%s" %(newname, counter,ext)
-    return datename
 
 def file_has_ext(f, ext_list):
     return os.path.splitext(f)[1][1:] in ext_list
-
-
 
 def main():
     parser = argparse.ArgumentParser(description="Rename pictures in given folder")
@@ -54,6 +51,5 @@ def main():
         newname = os.path.join(args.img_folder, datename)
         print("processing %s -> %s" % (img, newname))
         os.rename(fileimg,newname)
-
 
 main()
